@@ -1,10 +1,12 @@
 package com.example.hijpa
 
+import com.example.hijpa.model.Author
+import com.example.hijpa.model.BaseMember
+import com.example.hijpa.model.Member
+import com.example.hijpa.repository.MemberRepository
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
-import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.test.context.ActiveProfiles
 
 
@@ -13,22 +15,22 @@ import org.springframework.test.context.ActiveProfiles
 class ModelTest {
 
     @Autowired
-    private lateinit var userRepository: UserRepository
+    private lateinit var memberRepository: MemberRepository
 
 
     @Test
     fun getAllUsers(){
-        val member=Member(name="andy", email="sjho714@naver.com")
-        val author=Author(name= "andy2",email="sjho715@naver.com")
-        val member3=Member(name= "andy3",email="sjho716@naver.com")
-        val member4=Author(name= "andy4",email="sjho717@naver.com")
+        val member= Member(name="andy", email="sjho714@naver.com")
+        val author= Author(name= "andy2",email="sjho715@naver.com")
+        val member3= Member(name= "andy3",email="sjho716@naver.com")
+        val member4= Author(name= "andy4",email="sjho717@naver.com")
 
 
-        userRepository.save(member)
-        userRepository.save(author)
-        userRepository
+        memberRepository.save(member)
+        memberRepository.save(author)
+        memberRepository
 
-        val basemembers:List<BaseMember> = userRepository.findAll()
+        val basemembers:List<BaseMember> = memberRepository.findAll()
         for (user in basemembers){
 
         }

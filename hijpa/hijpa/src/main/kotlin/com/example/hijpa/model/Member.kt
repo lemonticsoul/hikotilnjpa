@@ -1,8 +1,7 @@
-package com.example.hijpa
+package com.example.hijpa.model
 
 import jakarta.persistence.*
 import java.time.Instant
-import kotlin.jvm.Transient
 
 
 @Entity
@@ -25,6 +24,8 @@ abstract class BaseMember (
         println(this::class.simpleName)
         return "User($id,$name,$email,$createDt)"
     }
+
+    fun fromDto(dto:MemberDTO)
 }
 
 
@@ -35,7 +36,7 @@ class Member(
     name:String,
     email:String,
 
-):BaseMember(name= name,email = email)
+): BaseMember(name= name,email = email)
 
 
 @Entity
@@ -44,4 +45,4 @@ class Author(
     name:String,
     email:String,
 
-):BaseMember(name= name,email = email)
+): BaseMember(name= name,email = email)
