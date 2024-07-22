@@ -26,14 +26,14 @@ class ModelTest {
         val member4= Author(name= "andy4",email="sjho717@naver.com")
 
 
-        memberRepository.save(member)
-        memberRepository.save(author)
-        memberRepository
+//        memberRepository.save(member)
+//        memberRepository.save(author)
+//        memberRepository
 
-        val basemembers:List<BaseMember> = memberRepository.findAll()
-        for (user in basemembers){
-
-        }
+//        val basemembers:List<BaseMember> = memberRepository.findAll()
+//        for (user in basemembers){
+//
+//        }
     }
 
 //    @Test
